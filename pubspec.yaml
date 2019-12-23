@@ -1,0 +1,23 @@
+name: flutter_remote_piano
+description: A toy piano app as an example of grpc-dart.
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  flutter_midi: ^1.0.0
+  grpc: ^2.1.3
+  protobuf: ^1.0.1
+  provider: ^4.0.0
+  tuple: ^1.0.3
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/sf2/Piano.SF2

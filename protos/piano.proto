@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package piano;
+
+service Piano {
+    rpc Connect (stream Note) returns (stream Note) {}
+}
+
+message Note {
+    uint32 pitch = 1;
+}
