@@ -8,10 +8,10 @@ import 'package:flutter_remote_piano/widgets/error_dialog.dart';
 class HostController = TextEditingController with Type;
 class PortController = TextEditingController with Type;
 
-class ConnectDialog extends StatelessWidget {
+class ConnectionDialog extends StatelessWidget {
   final BuildContext _context;
 
-  const ConnectDialog({@required BuildContext context}) : _context = context;
+  const ConnectionDialog({@required BuildContext context}) : _context = context;
 
   @override
   Widget build(BuildContext context) {

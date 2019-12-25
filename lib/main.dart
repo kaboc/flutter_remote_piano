@@ -5,7 +5,7 @@ import 'package:provider/provider.dart';
 
 import 'package:flutter_remote_piano/blocs/remote_bloc.dart';
 import 'package:flutter_remote_piano/common/settings.dart';
-import 'package:flutter_remote_piano/widgets/connect_button.dart';
+import 'package:flutter_remote_piano/widgets/connection_button.dart';
 import 'package:flutter_remote_piano/widgets/piano.dart';
 
 import 'package:flutter_remote_piano/platforms/others/grpc.dart'

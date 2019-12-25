@@ -1,4 +1,4 @@
-enum Connection {
+enum ConnectionStates {
   Off,
 //  Connecting,
   Ready,

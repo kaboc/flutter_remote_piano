@@ -4,7 +4,7 @@ import 'package:tuple/tuple.dart';
 
 import 'package:flutter_remote_piano/common/settings.dart';
 import 'package:flutter_remote_piano/platforms/sound_base.dart';
-import 'package:flutter_remote_piano/widgets/connect_button.dart';
+import 'package:flutter_remote_piano/widgets/connection_button.dart';
 import 'package:flutter_remote_piano/widgets/black_key.dart';
 import 'package:flutter_remote_piano/widgets/white_key.dart';
 
@@ -16,7 +16,7 @@ class Piano extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(AppSettings.appTitle),
-        actions: const <Widget>[ConnectButton()],
+        actions: const <Widget>[ConnectionButton()],
       ),
       body: SafeArea(
         child: LayoutBuilder(

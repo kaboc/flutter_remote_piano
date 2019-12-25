@@ -2,9 +2,8 @@ import 'dart:async';
 import 'package:meta/meta.dart';
 import 'package:flutter/material.dart';
 
+import 'package:flutter_remote_piano/common/connection_states.dart';
 import 'package:flutter_remote_piano/platforms/grpc_base.dart';
-
-import 'package:flutter_remote_piano/common/connection.dart';
 
 class RemoteBloc {
   final GrpcBase grpc;
@@ -20,11 +19,11 @@ class RemoteBloc {
     }
   }
 
-  final _stateController = StreamController<Connection>();
+  final _stateController = StreamController<ConnectionStates>();
   final _soundController = StreamController<int>();
   final _tapControllers = <StreamController<bool>>[];
 
-  Stream<Connection> get state => _stateController.stream;
+  Stream<ConnectionStates> get state => _stateController.stream;
   Stream<int> get pitch => _soundController.stream;
   Stream<bool> tapped(int keyIndex) => _tapControllers[keyIndex].stream;
 
@@ -41,7 +40,7 @@ class RemoteBloc {
   }
 
   Future<void> connect({@required String host, @required int port}) async {
-    _toggleButton(Connection.Ready);
+    _toggleButton(ConnectionStates.Ready);
 
     grpc.init(host: host, port: port);
     await grpc.connect(
@@ -57,10 +56,10 @@ class RemoteBloc {
 
   Future<void> disconnect() async {
     await grpc.terminate();
-    _toggleButton(Connection.Off);
+    _toggleButton(ConnectionStates.Off);
   }
 
-  void _toggleButton(Connection state) {
+  void _toggleButton(ConnectionStates state) {
     _stateController.sink.add(state);
   }
 

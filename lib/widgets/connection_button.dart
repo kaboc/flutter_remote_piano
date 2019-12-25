@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'package:flutter_remote_piano/blocs/remote_bloc.dart';
-import 'package:flutter_remote_piano/common/connection.dart';
-import 'package:flutter_remote_piano/widgets/connect_dialog.dart';
+import 'package:flutter_remote_piano/common/connection_states.dart';
+import 'package:flutter_remote_piano/widgets/connection_dialog.dart';
 
-export 'package:flutter_remote_piano/widgets/connect_dialog.dart';
+export 'package:flutter_remote_piano/widgets/connection_dialog.dart';
 
 const _icons = <IconData>[
   Icons.link_off,
@@ -19,24 +19,24 @@ const _iconColors = <Color>[
   Colors.orange,
 ];
 
-class ConnectButton extends StatelessWidget {
-  const ConnectButton();
+class ConnectionButton extends StatelessWidget {
+  const ConnectionButton();
 
   @override
   Widget build(BuildContext context) {
     final bloc = Provider.of<RemoteBloc>(context);
 
-    return StreamBuilder<Connection>(
+    return StreamBuilder<ConnectionStates>(
       stream: bloc.state,
-      initialData: Connection.Off,
+      initialData: ConnectionStates.Off,
       builder: (context, snapshot) {
         return IconButton(
           icon: Icon(_icons[snapshot.data.index]),
           color: _iconColors[snapshot.data.index],
           onPressed: () async {
-            snapshot.data == Connection.Ready
+            snapshot.data == ConnectionStates.Ready
                 ? await bloc.disconnect()
-                : ConnectDialog(context: context).show();
+                : ConnectionDialog(context: context).show();
           },
         );
       },
