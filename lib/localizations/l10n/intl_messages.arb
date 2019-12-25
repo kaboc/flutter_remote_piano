@@ -1,0 +1,59 @@
+{
+  "@@locale": "messages",
+  "@@last_modified": "2019-12-25T10:27:31.854918",
+  "appTitle": "Remote Piano",
+  "@appTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "hostTitle": "Hostname or IP",
+  "@hostTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "port": "Port",
+  "@port": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "placeholderPrefix": "e.g.",
+  "@placeholderPrefix": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "cancel": "CANCEL",
+  "@cancel": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "connect": "CONNECT",
+  "@connect": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "errorTitle": "ERROR",
+  "@errorTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "validationError": "Please enter information correctly.",
+  "@validationError": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "platformError": "Remote operation is not supported\non this platform.",
+  "@platformError": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "connectionError": "Connection failed.",
+  "@connectionError": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "ok": "OK",
+  "@ok": {
+    "type": "text",
+    "placeholders": {}
+  }
+}

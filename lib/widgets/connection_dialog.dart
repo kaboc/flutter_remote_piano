@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import 'package:flutter_remote_piano/common/exceptions.dart';
 import 'package:flutter_remote_piano/blocs/remote_bloc.dart';
+import 'package:flutter_remote_piano/localizations/app_localizations.dart';
 import 'package:flutter_remote_piano/widgets/error_dialog.dart';
 
 class HostController = TextEditingController with Type;
@@ -25,28 +26,28 @@ class ConnectionDialog extends StatelessWidget {
             children: <Widget>[
               TextField(
                 controller: hostController,
-                decoration: const InputDecoration(
-                  labelText: 'Hostname or IP',
-                  hintText: 'e.g. 192.168.111.222',
+                decoration: InputDecoration(
+                  labelText: l(context).hostTitle,
+                  hintText: '${l(context).placeholderPrefix} 192.168.111.222',
                 ),
               ),
               TextField(
                 controller: portController,
                 keyboardType: TextInputType.number,
-                decoration: const InputDecoration(
-                  labelText: 'Port',
-                  hintText: 'e.g. 50051',
+                decoration: InputDecoration(
+                  labelText: l(context).port,
+                  hintText: '${l(context).placeholderPrefix} 50051',
                 ),
               ),
             ],
           ),
           actions: <Widget>[
             FlatButton(
-              child: const Text('CANCEL'),
+              child: Text(l(context).cancel),
               onPressed: () => Navigator.pop(context),
             ),
             FlatButton(
-              child: const Text('CONNECT'),
+              child: Text(l(context).connect),
               onPressed: () async => await _onPressed(
                 context: context,
                 hostController: hostController,
@@ -77,7 +78,7 @@ class ConnectionDialog extends StatelessWidget {
     final port = _toNumber(portController.text);
 
     if (host.isEmpty || port == null || port.isNegative) {
-      _showErrorDialog('Please enter information correctly.');
+      _showErrorDialog(l(_context).validationError);
       return;
     }
 
@@ -88,9 +89,9 @@ class ConnectionDialog extends StatelessWidget {
         port: port,
       );
     } on PlatformUnsupportedException catch (_) {
-      _showErrorDialog('Remote operation is not supported\non this platform.');
+      _showErrorDialog(l(_context).platformError);
     } on ConnectionFailureException catch (_) {
-      _showErrorDialog('Connection failed.');
+      _showErrorDialog(l(_context).connectionError);
     } catch (e) {
       print(e);
     }

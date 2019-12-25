@@ -10,11 +10,18 @@ dependencies:
   flutter:
     sdk: flutter
 
+  flutter_localizations:
+    sdk: flutter
+
   flutter_midi: ^1.0.0
   grpc: ^2.1.3
+  intl: ^0.16.0
   protobuf: ^1.0.1
   provider: ^4.0.0
   tuple: ^1.0.3
+
+dev_dependencies:
+  intl_translation: ^0.17.7
 
 flutter:
   uses-material-design: true

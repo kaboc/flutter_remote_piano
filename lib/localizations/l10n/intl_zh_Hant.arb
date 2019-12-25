@@ -1,0 +1,59 @@
+{
+  "@@locale": "zh_Hant",
+  "@@last_modified": "2019-12-25T10:27:31.854918",
+  "appTitle": "遙控彈鋼琴",
+  "@appTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "hostTitle": "主機名或IP地址",
+  "@hostTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "port": "端口號",
+  "@port": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "placeholderPrefix": "範例：",
+  "@placeholderPrefix": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "cancel": "取消",
+  "@cancel": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "connect": "連接",
+  "@connect": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "errorTitle": "失誤",
+  "@errorTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "validationError": "請正確輸入。",
+  "@validationError": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "platformError": "該平台不支持遠程操作。",
+  "@platformError": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "connectionError": "無法連接。",
+  "@connectionError": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "ok": "好",
+  "@ok": {
+    "type": "text",
+    "placeholders": {}
+  }
+}

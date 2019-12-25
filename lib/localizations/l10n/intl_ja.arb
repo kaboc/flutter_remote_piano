@@ -1,0 +1,59 @@
+{
+  "@@locale": "ja",
+  "@@last_modified": "2019-12-25T10:27:31.854918",
+  "appTitle": "リモートピアノ",
+  "@appTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "hostTitle": "ホスト名 または IPアドレス",
+  "@hostTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "port": "ポート番号",
+  "@port": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "placeholderPrefix": "例：",
+  "@placeholderPrefix": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "cancel": "キャンセル",
+  "@cancel": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "connect": "接続",
+  "@connect": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "errorTitle": "エラー",
+  "@errorTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "validationError": "正しく入力してください。",
+  "@validationError": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "platformError": "このプラットフォームは\nリモート操作に対応していません。",
+  "@platformError": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "connectionError": "接続できませんでした。",
+  "@connectionError": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "ok": "OK",
+  "@ok": {
+    "type": "text",
+    "placeholders": {}
+  }
+}
