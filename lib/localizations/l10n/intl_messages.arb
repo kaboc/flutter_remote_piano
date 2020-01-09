@@ -1,23 +1,23 @@
 {
   "@@locale": "messages",
-  "@@last_modified": "2019-12-25T10:27:31.854918",
+  "@@last_modified": "2020-01-09T15:18:48.003979",
   "appTitle": "Remote Piano",
   "@appTitle": {
     "type": "text",
     "placeholders": {}
   },
-  "hostTitle": "Hostname or IP",
+  "hostTitle": "Hostname or IP address",
   "@hostTitle": {
     "type": "text",
     "placeholders": {}
   },
-  "port": "Port",
+  "port": "Port number",
   "@port": {
     "type": "text",
     "placeholders": {}
   },
-  "placeholderPrefix": "e.g.",
-  "@placeholderPrefix": {
+  "eg": "e.g.",
+  "@eg": {
     "type": "text",
     "placeholders": {}
   },

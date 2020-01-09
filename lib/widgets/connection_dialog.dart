@@ -28,7 +28,7 @@ class ConnectionDialog extends StatelessWidget {
                 controller: hostController,
                 decoration: InputDecoration(
                   labelText: l(context).hostTitle,
-                  hintText: '${l(context).placeholderPrefix} 192.168.111.222',
+                  hintText: '${l(context).eg} 192.168.111.222',
                 ),
               ),
               TextField(
@@ -36,7 +36,7 @@ class ConnectionDialog extends StatelessWidget {
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
                   labelText: l(context).port,
-                  hintText: '${l(context).placeholderPrefix} 50051',
+                  hintText: '${l(context).eg} 50051',
                 ),
               ),
             ],

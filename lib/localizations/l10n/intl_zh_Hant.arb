@@ -16,8 +16,8 @@
     "type": "text",
     "placeholders": {}
   },
-  "placeholderPrefix": "範例：",
-  "@placeholderPrefix": {
+  "eg": "範例：",
+  "@eg": {
     "type": "text",
     "placeholders": {}
   },

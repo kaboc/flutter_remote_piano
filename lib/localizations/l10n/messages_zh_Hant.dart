@@ -25,10 +25,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "cancel" : MessageLookupByLibrary.simpleMessage("取消"),
     "connect" : MessageLookupByLibrary.simpleMessage("連接"),
     "connectionError" : MessageLookupByLibrary.simpleMessage("無法連接。"),
+    "eg" : MessageLookupByLibrary.simpleMessage("範例："),
     "errorTitle" : MessageLookupByLibrary.simpleMessage("失誤"),
     "hostTitle" : MessageLookupByLibrary.simpleMessage("主機名或IP地址"),
     "ok" : MessageLookupByLibrary.simpleMessage("好"),
-    "placeholderPrefix" : MessageLookupByLibrary.simpleMessage("範例："),
     "platformError" : MessageLookupByLibrary.simpleMessage("該平台不支持遠程操作。"),
     "port" : MessageLookupByLibrary.simpleMessage("端口號"),
     "validationError" : MessageLookupByLibrary.simpleMessage("請正確輸入。")

@@ -7,18 +7,18 @@ mixin LocalizationMessages {
       );
 
   String get hostTitle => Intl.message(
-        'Hostname or IP',
+        'Hostname or IP address',
         name: 'hostTitle',
       );
 
   String get port => Intl.message(
-        'Port',
+        'Port number',
         name: 'port',
       );
 
-  String get placeholderPrefix => Intl.message(
+  String get eg => Intl.message(
         'e.g.',
-        name: 'placeholderPrefix',
+        name: 'eg',
       );
 
   String get cancel => Intl.message(

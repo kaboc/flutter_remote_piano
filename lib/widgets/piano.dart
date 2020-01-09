@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tuple/tuple.dart';
 
-import 'package:flutter_remote_piano/common/settings.dart';
+import 'package:flutter_remote_piano/localizations/app_localizations.dart';
 import 'package:flutter_remote_piano/platforms/sound_base.dart';
 import 'package:flutter_remote_piano/widgets/connection_button.dart';
 import 'package:flutter_remote_piano/widgets/black_key.dart';
@@ -15,7 +15,7 @@ class Piano extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(AppSettings.appTitle),
+        title: Text(l(context).appTitle),
         actions: const <Widget>[ConnectionButton()],
       ),
       body: SafeArea(

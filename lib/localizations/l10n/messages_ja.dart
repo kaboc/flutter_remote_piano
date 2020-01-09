@@ -25,10 +25,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "cancel" : MessageLookupByLibrary.simpleMessage("キャンセル"),
     "connect" : MessageLookupByLibrary.simpleMessage("接続"),
     "connectionError" : MessageLookupByLibrary.simpleMessage("接続できませんでした。"),
+    "eg" : MessageLookupByLibrary.simpleMessage("例："),
     "errorTitle" : MessageLookupByLibrary.simpleMessage("エラー"),
     "hostTitle" : MessageLookupByLibrary.simpleMessage("ホスト名 または IPアドレス"),
     "ok" : MessageLookupByLibrary.simpleMessage("OK"),
-    "placeholderPrefix" : MessageLookupByLibrary.simpleMessage("例："),
     "platformError" : MessageLookupByLibrary.simpleMessage("このプラットフォームは\nリモート操作に対応していません。"),
     "port" : MessageLookupByLibrary.simpleMessage("ポート番号"),
     "validationError" : MessageLookupByLibrary.simpleMessage("正しく入力してください。")

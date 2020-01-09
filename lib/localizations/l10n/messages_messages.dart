@@ -25,12 +25,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "cancel" : MessageLookupByLibrary.simpleMessage("CANCEL"),
     "connect" : MessageLookupByLibrary.simpleMessage("CONNECT"),
     "connectionError" : MessageLookupByLibrary.simpleMessage("Connection failed."),
+    "eg" : MessageLookupByLibrary.simpleMessage("e.g."),
     "errorTitle" : MessageLookupByLibrary.simpleMessage("ERROR"),
-    "hostTitle" : MessageLookupByLibrary.simpleMessage("Hostname or IP"),
+    "hostTitle" : MessageLookupByLibrary.simpleMessage("Hostname or IP address"),
     "ok" : MessageLookupByLibrary.simpleMessage("OK"),
-    "placeholderPrefix" : MessageLookupByLibrary.simpleMessage("e.g."),
     "platformError" : MessageLookupByLibrary.simpleMessage("Remote operation is not supported\non this platform."),
-    "port" : MessageLookupByLibrary.simpleMessage("Port"),
+    "port" : MessageLookupByLibrary.simpleMessage("Port number"),
     "validationError" : MessageLookupByLibrary.simpleMessage("Please enter information correctly.")
   };
 }
