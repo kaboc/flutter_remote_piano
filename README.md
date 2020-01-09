@@ -9,8 +9,8 @@ A toy piano app made with Flutter as a gRPC example, with a unique feature to in
 * Android
 * iOS
 * Web (limited)
-    * `grpc-web` is used for web instead of `grpc-dart`.
-    * Sending notes is not supported due to the limited functionality of grpc-web.
+    * `gRPC-Web` is used for web instead of `grpc-dart`.
+    * Sending notes is not supported due to the limited functionality of gRPC-Web.
     * Receiving notes does not start unless you send a request by tapping a key after connected to a server.
     * Tapping more keys cause an error printed in a browser console.
     * A gateway proxy is necessary between a server and clients. See below for instruction.
