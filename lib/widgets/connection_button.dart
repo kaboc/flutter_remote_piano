@@ -7,16 +7,9 @@ import 'package:flutter_remote_piano/widgets/connection_dialog.dart';
 
 export 'package:flutter_remote_piano/widgets/connection_dialog.dart';
 
-const _icons = <IconData>[
-  Icons.link_off,
-  Icons.link,
-//  Icons.music_note,
-];
-
-const _iconColors = <Color>[
-  Colors.grey,
-//  Colors.grey,
-  Colors.orange,
+const _icons = <Icon>[
+  Icon(Icons.link_off, color: Colors.grey),
+  Icon(Icons.link, color: Colors.orange),
 ];
 
 class ConnectionButton extends StatelessWidget {
@@ -31,8 +24,7 @@ class ConnectionButton extends StatelessWidget {
       initialData: ConnectionStates.off,
       builder: (context, snapshot) {
         return IconButton(
-          icon: Icon(_icons[snapshot.data.index]),
-          color: _iconColors[snapshot.data.index],
+          icon: _icons[snapshot.data.index],
           onPressed: () async {
             snapshot.data == ConnectionStates.ready
                 ? await bloc.disconnect()
