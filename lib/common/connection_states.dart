@@ -1,5 +1,5 @@
 enum ConnectionStates {
-  Off,
-//  Connecting,
-  Ready,
+  off,
+//  connecting,
+  ready,
 }

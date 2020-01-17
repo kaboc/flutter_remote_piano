@@ -5,12 +5,12 @@ import 'package:tuple/tuple.dart';
 import 'package:flutter_remote_piano/blocs/remote_bloc.dart';
 import 'package:flutter_remote_piano/platforms/sound_base.dart';
 
+const _widthRatio = 0.75;
+
 class BlackKey extends StatelessWidget {
   final Notes note;
 
   const BlackKey(this.note);
-
-  static const widthRatio = 0.75;
 
   @override
   Widget build(BuildContext context) {
@@ -28,10 +28,10 @@ class BlackKey extends StatelessWidget {
         initialData: false,
         builder: (context, snapshot) {
           return Container(
-            width: width * widthRatio,
+            width: width * _widthRatio,
             height: height * 0.6,
             margin:
-                EdgeInsets.symmetric(horizontal: width * (1 - widthRatio) / 2),
+                EdgeInsets.symmetric(horizontal: width * (1 - _widthRatio) / 2),
             decoration: BoxDecoration(
               color: snapshot.data ? Colors.grey : Colors.black,
               borderRadius: const BorderRadius.only(

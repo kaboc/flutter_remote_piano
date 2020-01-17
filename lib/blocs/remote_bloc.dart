@@ -40,7 +40,7 @@ class RemoteBloc {
   }
 
   Future<void> connect({@required String host, @required int port}) async {
-    _toggleButton(ConnectionStates.Ready);
+    _toggleButton(ConnectionStates.ready);
 
     grpc.init(host: host, port: port);
     await grpc.connect(
@@ -56,7 +56,7 @@ class RemoteBloc {
 
   Future<void> disconnect() async {
     await grpc.terminate();
-    _toggleButton(ConnectionStates.Off);
+    _toggleButton(ConnectionStates.off);
   }
 
   void _toggleButton(ConnectionStates state) {

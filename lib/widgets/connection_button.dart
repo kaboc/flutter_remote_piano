@@ -28,13 +28,13 @@ class ConnectionButton extends StatelessWidget {
 
     return StreamBuilder<ConnectionStates>(
       stream: bloc.state,
-      initialData: ConnectionStates.Off,
+      initialData: ConnectionStates.off,
       builder: (context, snapshot) {
         return IconButton(
           icon: Icon(_icons[snapshot.data.index]),
           color: _iconColors[snapshot.data.index],
           onPressed: () async {
-            snapshot.data == ConnectionStates.Ready
+            snapshot.data == ConnectionStates.ready
                 ? await bloc.disconnect()
                 : ConnectionDialog(context: context).show();
           },
