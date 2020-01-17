@@ -18,8 +18,8 @@ A toy piano app made with Flutter as a gRPC example, with a unique feature to in
 
 [flutter_midi](https://pub.dev/packages/flutter_midi) and [Tone.js](https://tonejs.github.io/) are used for mobile and web respectively.
 
-No sound font (.sf2) file is in this repository.
-Search and get one, place it in `/assets/sf2/`, and then specify the file path in `pubspec.yaml`. 
+**No sound font (.sf2) file is in this repository.**
+Search and get one, and place it in `/assets/sf2/` before you run the app. 
 
 ## Server
 
