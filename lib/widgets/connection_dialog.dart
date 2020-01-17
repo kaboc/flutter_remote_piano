@@ -16,8 +16,8 @@ class ConnectionDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final hostController = Provider.of<HostController>(_context);
-    final portController = Provider.of<PortController>(_context);
+    final hostController = Provider.of<HostController>(_context, listen: false);
+    final portController = Provider.of<PortController>(_context, listen: false);
 
     return Center(
       child: SingleChildScrollView(
@@ -82,7 +82,7 @@ class ConnectionDialog extends StatelessWidget {
       return;
     }
 
-    final bloc = Provider.of<RemoteBloc>(_context);
+    final bloc = Provider.of<RemoteBloc>(_context, listen: false);
     try {
       await bloc.connect(
         host: hostController.text,
