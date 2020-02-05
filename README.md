@@ -25,3 +25,7 @@ Search and get one, and place it in `/assets/sf2/` before you run the app.
 
 A server is necessary if you use the remote operation feature of the app.
 Its source code is on [another repository](https://github.com/kaboc/piano_server).
+
+## Credits
+
+* Icons made by [Adib Sulthon](https://www.flaticon.com/authors/adib-sulthon "Adib Sulthon") from [www.flaticon.com](https://www.flaticon.com/ "Flaticon")
