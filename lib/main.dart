@@ -34,36 +34,36 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      onGenerateTitle: (context) => l(context).appTitle,
-      theme: ThemeData.dark(),
-      localizationsDelegates: [
-        const AppLocalizationsDelegate(),
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
+    return MultiProvider(
+      providers: [
+        Provider<RemoteBloc>(
+          create: (_) {
+            final sound = Sound()..init();
+            return RemoteBloc(
+              grpc: Grpc(),
+              basePitch: SoundBase.basePitch,
+              numberOfKeys: SoundBase.whiteNum + SoundBase.blackNum,
+            )..pitch.listen((pitch) => sound.play(pitch));
+          },
+          dispose: (_, bloc) => bloc.dispose(),
+        ),
+        ChangeNotifierProvider<HostController>(
+          create: (_) => HostController(text: AppSettings.defaultHost),
+        ),
+        ChangeNotifierProvider<PortController>(
+          create: (_) => PortController(text: AppSettings.defaultPort),
+        ),
       ],
-      supportedLocales: supportedLocales,
-      home: MultiProvider(
-        providers: [
-          Provider<RemoteBloc>(
-            create: (_) {
-              final sound = Sound()..init();
-              return RemoteBloc(
-                grpc: Grpc(),
-                basePitch: SoundBase.basePitch,
-                numberOfKeys: SoundBase.whiteNum + SoundBase.blackNum,
-              )..pitch.listen((pitch) => sound.play(pitch));
-            },
-            dispose: (_, bloc) => bloc.dispose(),
-          ),
-          ChangeNotifierProvider<HostController>(
-            create: (_) => HostController(text: AppSettings.defaultHost),
-          ),
-          ChangeNotifierProvider<PortController>(
-            create: (_) => PortController(text: AppSettings.defaultPort),
-          ),
+      child: MaterialApp(
+        onGenerateTitle: (context) => l(context).appTitle,
+        theme: ThemeData.dark(),
+        localizationsDelegates: [
+          const AppLocalizationsDelegate(),
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
         ],
-        child: const Piano(),
+        supportedLocales: supportedLocales,
+        home: const Piano(),
       ),
     );
   }
