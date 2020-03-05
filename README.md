@@ -2,7 +2,11 @@
 
 A toy piano app made with Flutter as a gRPC example, with a unique feature to interact with remote devices.
 
-![Screencast](doc/images/remote_piano.gif)
+![Screencast](docs/images/remote_piano.gif)
+
+## Demo
+
+https://kaboc.github.io/flutter_remote_piano/
 
 ## Supported platforms
 
@@ -11,12 +15,10 @@ A toy piano app made with Flutter as a gRPC example, with a unique feature to in
 * Web (limited)
     * `gRPC-Web` is used for web instead of `grpc-dart`.
     * Sending notes is not supported due to the limited functionality of gRPC-Web.
-    * Receiving notes does not start unless you send a request by tapping a key after connected to a server.
+    * Receiving notes does not start unless you send a request by tapping any one of keys after connected to a server.
     * Tapping more keys cause an error printed in a browser console.
-    * A gateway proxy is necessary between a server and clients. See below for instruction.
+    * A gateway proxy is necessary between a server and clients.
         * See the README of [piano_server](https://github.com/kaboc/piano_server) for details.
-
-[flutter_midi](https://pub.dev/packages/flutter_midi) and [Tone.js](https://tonejs.github.io/) are used for mobile and web respectively.
 
 **No sound font (.sf2) file is in this repository.**
 Search and get one, and place it in `/assets/sf2/` before you run the app. 
@@ -29,3 +31,6 @@ Its source code is on [another repository](https://github.com/kaboc/piano_server
 ## Credits
 
 * Icons made by [Adib Sulthon](https://www.flaticon.com/authors/adib-sulthon "Adib Sulthon") from [www.flaticon.com](https://www.flaticon.com/ "Flaticon")
+* [flutter_midi](https://github.com/rodydavis/flutter_midi) by Rody Davis
+* [Tone.js](https://tonejs.github.io/) by Yotam Mann
+ 
