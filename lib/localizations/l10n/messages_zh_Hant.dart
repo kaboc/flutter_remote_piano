@@ -31,6 +31,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "ok" : MessageLookupByLibrary.simpleMessage("好"),
     "platformError" : MessageLookupByLibrary.simpleMessage("該平台不支持遠程操作。"),
     "port" : MessageLookupByLibrary.simpleMessage("端口號"),
-    "validationError" : MessageLookupByLibrary.simpleMessage("請正確輸入。")
+    "validationError" : MessageLookupByLibrary.simpleMessage("請正確輸入。"),
+    "webLimitation" : MessageLookupByLibrary.simpleMessage("網絡上的限制：\n・要開始接收，您需要按鍵盤上的任意鍵。\n・您只能發送您按的第一個聲音。 接待是無限的。")
   };
 }

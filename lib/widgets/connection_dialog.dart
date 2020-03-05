@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -24,6 +25,10 @@ class ConnectionDialog extends StatelessWidget {
         child: AlertDialog(
           content: Column(
             children: <Widget>[
+              if (kIsWeb)
+                Text('${l(context).webLimitation}'),
+              if (kIsWeb)
+                const SizedBox(height: 16.0),
               TextField(
                 controller: hostController,
                 decoration: InputDecoration(

@@ -1,6 +1,6 @@
 {
   "@@locale": "messages",
-  "@@last_modified": "2020-01-09T15:18:48.003979",
+  "@@last_modified": "2020-03-05T19:38:15.450239",
   "appTitle": "Remote Piano",
   "@appTitle": {
     "type": "text",
@@ -53,6 +53,11 @@
   },
   "ok": "OK",
   "@ok": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "webLimitation": "Limitations on the web:\n- Any one of piano keys must be pressed to start listening to the server.\n- Only the first note can be sent.",
+  "@webLimitation": {
     "type": "text",
     "placeholders": {}
   }

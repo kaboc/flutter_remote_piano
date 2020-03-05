@@ -31,6 +31,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "ok" : MessageLookupByLibrary.simpleMessage("OK"),
     "platformError" : MessageLookupByLibrary.simpleMessage("Remote operation is not supported\non this platform."),
     "port" : MessageLookupByLibrary.simpleMessage("Port number"),
-    "validationError" : MessageLookupByLibrary.simpleMessage("Please enter information correctly.")
+    "validationError" : MessageLookupByLibrary.simpleMessage("Please enter information correctly."),
+    "webLimitation" : MessageLookupByLibrary.simpleMessage("Limitations on the web:\n- Any one of piano keys must be pressed to start listening to the server.\n- Only the first note can be sent.")
   };
 }

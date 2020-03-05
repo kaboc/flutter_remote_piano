@@ -9,7 +9,7 @@ const supportedLocales = [
   Locale('en'),
   Locale('ja'),
   Locale('zh', 'Hans'),
-  Locale('zh', 'Hant')
+  Locale('zh', 'Hant'),
 ];
 
 class AppLocalizations with LocalizationMessages {

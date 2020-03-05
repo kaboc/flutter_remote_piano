@@ -31,6 +31,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "ok" : MessageLookupByLibrary.simpleMessage("OK"),
     "platformError" : MessageLookupByLibrary.simpleMessage("このプラットフォームは\nリモート操作に対応していません。"),
     "port" : MessageLookupByLibrary.simpleMessage("ポート番号"),
-    "validationError" : MessageLookupByLibrary.simpleMessage("正しく入力してください。")
+    "validationError" : MessageLookupByLibrary.simpleMessage("正しく入力してください。"),
+    "webLimitation" : MessageLookupByLibrary.simpleMessage("Webにおける制限：\n・受信を開始するには鍵盤のキーをどれか一つ押す必要があります。\n・最初に押す一音しか送信できません。受信は無制限です。")
   };
 }

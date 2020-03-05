@@ -55,4 +55,12 @@ mixin LocalizationMessages {
         'OK',
         name: 'ok',
       );
+
+  String get webLimitation => Intl.message(
+        'Limitations on the web:\n'
+        '- Any one of piano keys must be pressed to start listening '
+        'to the server.\n'
+        '- Only the first note can be sent.',
+        name: 'webLimitation',
+      );
 }

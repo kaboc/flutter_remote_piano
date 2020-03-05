@@ -1,6 +1,6 @@
 {
   "@@locale": "zh_Hant",
-  "@@last_modified": "2019-12-25T10:27:31.854918",
+  "@@last_modified": "2020-03-05T19:38:15.450239",
   "appTitle": "遙控彈鋼琴",
   "@appTitle": {
     "type": "text",
@@ -53,6 +53,11 @@
   },
   "ok": "好",
   "@ok": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "webLimitation": "網絡上的限制：\n・要開始接收，您需要按鍵盤上的任意鍵。\n・您只能發送您按的第一個聲音。 接待是無限的。",
+  "@webLimitation": {
     "type": "text",
     "placeholders": {}
   }

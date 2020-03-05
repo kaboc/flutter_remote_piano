@@ -1,6 +1,6 @@
 {
   "@@locale": "ja",
-  "@@last_modified": "2019-12-25T10:27:31.854918",
+  "@@last_modified": "2020-03-05T19:38:15.450239",
   "appTitle": "リモートピアノ",
   "@appTitle": {
     "type": "text",
@@ -53,6 +53,11 @@
   },
   "ok": "OK",
   "@ok": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "webLimitation": "Webにおける制限：\n・受信を開始するには鍵盤のキーをどれか一つ押す必要があります。\n・最初に押す一音しか送信できません。受信は無制限です。",
+  "@webLimitation": {
     "type": "text",
     "placeholders": {}
   }
