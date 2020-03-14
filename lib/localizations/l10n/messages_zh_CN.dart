@@ -1,5 +1,5 @@
 // DO NOT EDIT. This is code generated via package:intl/generate_localized.dart
-// This is a library that provides messages for a zh_Hant locale. All the
+// This is a library that provides messages for a zh_CN locale. All the
 // messages from the main program should be duplicated here with the same
 // function name.
 
@@ -17,21 +17,21 @@ final messages = new MessageLookup();
 typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 
 class MessageLookup extends MessageLookupByLibrary {
-  String get localeName => 'zh_Hant';
+  String get localeName => 'zh_CN';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
-    "appTitle" : MessageLookupByLibrary.simpleMessage("遙控彈鋼琴"),
+    "appTitle" : MessageLookupByLibrary.simpleMessage("遥控弹钢琴"),
     "cancel" : MessageLookupByLibrary.simpleMessage("取消"),
-    "connect" : MessageLookupByLibrary.simpleMessage("連接"),
-    "connectionError" : MessageLookupByLibrary.simpleMessage("無法連接。"),
-    "eg" : MessageLookupByLibrary.simpleMessage("範例："),
-    "errorTitle" : MessageLookupByLibrary.simpleMessage("失誤"),
-    "hostTitle" : MessageLookupByLibrary.simpleMessage("主機名或IP地址"),
+    "connect" : MessageLookupByLibrary.simpleMessage("连接"),
+    "connectionError" : MessageLookupByLibrary.simpleMessage("无法连接。"),
+    "eg" : MessageLookupByLibrary.simpleMessage("范例："),
+    "errorTitle" : MessageLookupByLibrary.simpleMessage("失误"),
+    "hostTitle" : MessageLookupByLibrary.simpleMessage("主机名或IP地址"),
     "ok" : MessageLookupByLibrary.simpleMessage("好"),
-    "platformError" : MessageLookupByLibrary.simpleMessage("該平台不支持遠程操作。"),
-    "port" : MessageLookupByLibrary.simpleMessage("端口號"),
-    "validationError" : MessageLookupByLibrary.simpleMessage("請正確輸入。"),
-    "webLimitation" : MessageLookupByLibrary.simpleMessage("網絡上的限制：\n・要開始接收，您需要按鍵盤上的任意鍵。\n・您只能發送您按的第一個聲音。 接待是無限的。")
+    "platformError" : MessageLookupByLibrary.simpleMessage("该平台不支持远程操作。"),
+    "port" : MessageLookupByLibrary.simpleMessage("端口号"),
+    "validationError" : MessageLookupByLibrary.simpleMessage("请正确输入。"),
+    "webLimitation" : MessageLookupByLibrary.simpleMessage("网络上的限制：\n・要开始接收，您需要按键盘上的任意键。\n・您只能发送您按的第一个声音。 接待是无限的。")
   };
 }

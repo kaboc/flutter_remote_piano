@@ -1,0 +1,15 @@
+{
+  "@@locale": "zh_HK",
+  "appTitle": "遙控彈鋼琴",
+  "hostTitle": "主機名或IP地址",
+  "port": "端口號",
+  "eg": "範例：",
+  "cancel": "取消",
+  "connect": "連接",
+  "errorTitle": "失誤",
+  "validationError": "請正確輸入。",
+  "platformError": "該平台不支持遠程操作。",
+  "connectionError": "無法連接。",
+  "ok": "好",
+  "webLimitation": "網絡上的限制：\n・要開始接收，您需要按鍵盤上的任意鍵。\n・您只能發送您按的第一個聲音。 接待是無限的。"
+}

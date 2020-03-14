@@ -1,0 +1,15 @@
+{
+  "@@locale": "zh_CN",
+  "appTitle": "遥控弹钢琴",
+  "hostTitle": "主机名或IP地址",
+  "port": "端口号",
+  "eg": "范例：",
+  "cancel": "取消",
+  "connect": "连接",
+  "errorTitle": "失误",
+  "validationError": "请正确输入。",
+  "platformError": "该平台不支持远程操作。",
+  "connectionError": "无法连接。",
+  "ok": "好",
+  "webLimitation": "网络上的限制：\n・要开始接收，您需要按键盘上的任意键。\n・您只能发送您按的第一个声音。 接待是无限的。"
+}
