@@ -17,11 +17,11 @@ dependencies:
   grpc: ^2.1.3
   intl: ^0.16.0
   protobuf: ^1.0.1
-  provider: ^4.0.4
+  provider: ^4.0.5
   tuple: ^1.0.3
 
 dev_dependencies:
-  intl_translation: 0.17.9
+  intl_translation: ^0.17.10
 
 flutter:
   uses-material-design: true
