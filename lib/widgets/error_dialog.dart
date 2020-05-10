@@ -15,27 +15,31 @@ class ErrorDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AlertDialog(
-      title: Text(
-        l(context).errorTitle,
-        style: TextStyle(color: Colors.red),
-      ),
-      content: SingleChildScrollView(
-        child: Text(message),
-      ),
-      actions: <Widget>[
-        RaisedButton(
-          child: Text(
-            l(context).ok,
-            style: TextStyle(color: Colors.white),
+    return Center(
+      child: SingleChildScrollView(
+        child: AlertDialog(
+          title: Text(
+            l(context).errorTitle,
+            style: TextStyle(color: Colors.red),
           ),
-          color: Colors.red,
-          onPressed: () {
-            Navigator.pop(context);
-            onConfirm?.call();
-          },
+          content: SingleChildScrollView(
+            child: Text(message),
+          ),
+          actions: <Widget>[
+            RaisedButton(
+              child: Text(
+                l(context).ok,
+                style: TextStyle(color: Colors.white),
+              ),
+              color: Colors.red,
+              onPressed: () {
+                Navigator.pop(context);
+                onConfirm?.call();
+              },
+            ),
+          ],
         ),
-      ],
+      ),
     );
   }
 
