@@ -8,8 +8,7 @@ class Sound extends SoundBase {
   dynamic _synth;
 
   @override
-  void init() {
-    // ignore: avoid_as
+  Future<void> init() async {
     _synth = JsObject(context['Tone']['PolySynth'] as JsFunction)
         .callMethod('toMaster');
   }
