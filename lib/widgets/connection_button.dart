@@ -17,7 +17,7 @@ class ConnectionButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bloc = Provider.of<RemoteBloc>(context);
+    final bloc = Provider.of<RemoteBloc>(context, listen: false);
 
     return StreamBuilder<ConnectionStates>(
       stream: bloc.state,

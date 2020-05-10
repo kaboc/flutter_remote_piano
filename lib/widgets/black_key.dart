@@ -14,7 +14,7 @@ class BlackKey extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bloc = Provider.of<RemoteBloc>(context);
+    final bloc = Provider.of<RemoteBloc>(context, listen: false);
 
     final screenSize = Provider.of<Tuple2<double, double>>(context);
     final width = screenSize.item1 / SoundBase.whiteNum;
