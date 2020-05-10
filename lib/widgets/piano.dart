@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:tuple/tuple.dart';
 
 import 'package:flutter_remote_piano/localizations/app_localizations.dart';
 import 'package:flutter_remote_piano/platforms/sound_base.dart';
@@ -26,8 +25,8 @@ class Piano extends StatelessWidget {
             final maxHeight = constraints.maxHeight;
             final keyWidth = maxWidth / SoundBase.whiteNum;
 
-            return Provider<Tuple2<double, double>>.value(
-              value: Tuple2(maxWidth, maxHeight),
+            return Provider<Size>.value(
+              value: Size(maxWidth, maxHeight),
               child: Stack(children: <Widget>[
                 Row(
                   children: const <Widget>[

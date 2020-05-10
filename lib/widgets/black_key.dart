@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:tuple/tuple.dart';
 
 import 'package:flutter_remote_piano/blocs/remote_bloc.dart';
 import 'package:flutter_remote_piano/platforms/sound_base.dart';
@@ -16,9 +15,9 @@ class BlackKey extends StatelessWidget {
   Widget build(BuildContext context) {
     final bloc = Provider.of<RemoteBloc>(context, listen: false);
 
-    final screenSize = Provider.of<Tuple2<double, double>>(context);
-    final width = screenSize.item1 / SoundBase.whiteNum;
-    final height = screenSize.item2;
+    final screenSize = context.watch<Size>();
+    final width = screenSize.width / SoundBase.whiteNum;
+    final height = screenSize.height;
 
     final pitch = SoundBase.toPitch(note);
 
@@ -61,7 +60,7 @@ class BlackKeySpace extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = Provider.of<Tuple2<double, double>>(context);
-    return SizedBox(width: size.item1 / SoundBase.whiteNum);
+    final size = context.watch<Size>();
+    return SizedBox(width: size.width / SoundBase.whiteNum);
   }
 }

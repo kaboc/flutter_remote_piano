@@ -18,7 +18,6 @@ dependencies:
   intl: ^0.16.1
   protobuf: ^1.0.1
   provider: ^4.1.1
-  tuple: ^1.0.3
 
 dev_dependencies:
   intl_translation: ^0.17.10
