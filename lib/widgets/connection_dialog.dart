@@ -26,7 +26,7 @@ class ConnectionDialog extends StatelessWidget {
           content: Column(
             children: <Widget>[
               if (kIsWeb)
-                Text('${l(context).webLimitation}'),
+                Text(l(context).webLimitation),
               if (kIsWeb)
                 const SizedBox(height: 16.0),
               TextField(
@@ -87,9 +87,8 @@ class ConnectionDialog extends StatelessWidget {
       return;
     }
 
-    final bloc = Provider.of<RemoteBloc>(_context, listen: false);
     try {
-      await bloc.connect(
+      await context.read<RemoteBloc>().connect(
         host: hostController.text,
         port: port,
       );
