@@ -41,9 +41,9 @@ abstract class SoundBase {
   static const whiteNum = 10;
   static const blackNum = 7;
 
-  Future<void> init();
+  void init();
 
-  void play(int pitch);
+  Future<void> play(int pitch);
 
   static int toPitch(Notes note) {
     return basePitch + note.index;

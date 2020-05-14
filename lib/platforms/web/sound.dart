@@ -8,13 +8,13 @@ class Sound extends SoundBase {
   dynamic _synth;
 
   @override
-  Future<void> init() async {
+  void init() {
     _synth = JsObject(context['Tone']['PolySynth'] as JsFunction)
         .callMethod('toMaster');
   }
 
   @override
-  void play(int pitch) {
+  Future<void> play(int pitch) async {
     final octaveNum = (pitch / 12).floor();
     final noteName = '${SoundBase.toName(pitch)}$octaveNum';
 

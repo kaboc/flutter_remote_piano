@@ -37,22 +37,16 @@ class App extends StatelessWidget {
     return MultiProvider(
       providers: [
         Provider<Sound>(
-          create: (_) => Sound(),
+          create: (_) => Sound()..init(),
         ),
         Provider<RemoteBloc>(
           create: (context) {
-            final bloc = RemoteBloc(
+            final sound = context.read<Sound>();
+            return RemoteBloc(
               grpc: Grpc(),
               basePitch: SoundBase.basePitch,
               numberOfKeys: SoundBase.whiteNum + SoundBase.blackNum,
-            );
-
-            final sound = context.read<Sound>();
-            sound.init().then((_) {
-              bloc.pitch.listen((pitch) => sound.play(pitch));
-            });
-
-            return bloc;
+            )..pitch.listen((pitch) => sound.play(pitch));
           },
           dispose: (_, bloc) => bloc.dispose(),
         ),

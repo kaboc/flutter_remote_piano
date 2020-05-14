@@ -5,8 +5,8 @@ export 'package:flutter_remote_piano/platforms/sound_base.dart';
 
 class Sound extends SoundBase {
   @override
-  Future<void> init() => throw PlatformUnsupportedException();
+  void init() => throw PlatformUnsupportedException();
 
   @override
-  void play(int pitch) => throw PlatformUnsupportedException();
+  Future<void> play(int pitch) => throw PlatformUnsupportedException();
 }

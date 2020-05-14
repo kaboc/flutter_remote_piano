@@ -11,20 +11,21 @@ class Sound extends SoundBase {
   FlutterMidi midi = FlutterMidi();
 
   @override
-  Future<void> init() async {
+  void init() {
     midi.unmute();
-    await rootBundle.load(_fontPath).then((sf2) async {
-      midi.prepare(sf2: sf2);
-
-      // HACK: Reduces the chance of getting an exception, which can occur when
-      // notes are played before midi becoming ready, by this short wait
-      // (instead of awaiting midi.prepare() that seems to last forever).
-      await Future<void>.delayed(const Duration(milliseconds: 200));
-    });
+    rootBundle.load(_fontPath).then((sf2) => midi.prepare(sf2: sf2));
   }
 
   @override
-  void play(int pitch) {
-    midi.playMidiNote(midi: pitch);
+  Future<void> play(int pitch) async {
+    try {
+      await midi.playMidiNote(midi: pitch);
+    } on PlatformException catch (_) {
+      print(
+        'An error occurred in the MIDI plugin; '
+        'this typically occurs when a note is played '
+        'before the sound font becomes ready.',
+      );
+    }
   }
 }
