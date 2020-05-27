@@ -1,3 +1,7 @@
-class PlatformUnsupportedException implements Exception {}
+class GenericException implements Exception {
+  @override
+  String toString() => runtimeType.toString();
+}
 
-class ConnectionFailureException implements Exception {}
+class PlatformUnsupportedException = GenericException with Type;
+class ConnectionFailureException = GenericException with Type;
