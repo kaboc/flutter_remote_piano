@@ -27,12 +27,14 @@ class Grpc extends GrpcBase<ClientChannel> {
       await for (final res in responses) {
         onResponse(res.pitch);
       }
-    } catch (e) {
-      print(e);
-      if (e.toString().contains('SocketException')) {
+    } on GrpcError catch (e) {
+      if (e.code == StatusCode.unavailable) {
         await onError();
         throw ConnectionFailureException();
       }
+    } catch (e) {
+      print(e);
+      await onError();
     }
 
     await onError();
