@@ -28,8 +28,9 @@ class Grpc extends GrpcBase<ClientChannel> {
         onResponse(res.pitch);
       }
     } on GrpcError catch (e) {
+      print(e);
+      await onError();
       if (e.code == StatusCode.unavailable) {
-        await onError();
         throw ConnectionFailureException();
       }
     } catch (e) {
