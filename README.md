@@ -15,6 +15,8 @@ See the information on web limitations below.
 * Android
 * iOS
 * Web (limited)
+    * **There seems to be a connection issue on web as of Flutter 1.20.0-0.0.pre on channel dev.
+      The app is disconnected right after the first note is sent.**
     * `gRPC-Web` is used for web instead of `grpc-dart`.
     * Sending notes is not supported due to the limited functionality of gRPC-Web.
     * Receiving notes does not start unless you send a request by tapping any one of keys after connected to a server.
