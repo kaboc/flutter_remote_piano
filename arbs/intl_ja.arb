@@ -1,5 +1,6 @@
 {
   "@@locale": "ja",
+
   "appTitle": "リモートピアノ",
   "hostTitle": "ホスト名 または IPアドレス",
   "port": "ポート番号",

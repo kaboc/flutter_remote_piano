@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'package:flutter_remote_piano/common/exceptions.dart';
+import 'package:flutter_remote_piano/common/l10n.dart';
 import 'package:flutter_remote_piano/blocs/remote_bloc.dart';
-import 'package:flutter_remote_piano/localizations/app_localizations.dart';
 import 'package:flutter_remote_piano/widgets/error_dialog.dart';
 
 class HostController = TextEditingController with Type;

@@ -1,5 +1,6 @@
 {
   "@@locale": "zh_TW",
+
   "appTitle": "遙控彈鋼琴",
   "hostTitle": "主機名或IP地址",
   "port": "端口號",

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_remote_piano/localizations/app_localizations.dart';
+import 'package:flutter_remote_piano/common/l10n.dart';
 
 class ErrorDialog extends StatelessWidget {
   final BuildContext _context;
