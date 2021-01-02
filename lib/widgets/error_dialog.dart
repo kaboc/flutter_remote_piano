@@ -20,7 +20,7 @@ class ErrorDialog extends StatelessWidget {
         child: AlertDialog(
           title: Text(
             l(context).errorTitle,
-            style: TextStyle(color: Colors.red),
+            style: const TextStyle(color: Colors.red),
           ),
           content: SingleChildScrollView(
             child: Text(message),
@@ -29,7 +29,7 @@ class ErrorDialog extends StatelessWidget {
             RaisedButton(
               child: Text(
                 l(context).ok,
-                style: TextStyle(color: Colors.white),
+                style: const TextStyle(color: Colors.white),
               ),
               color: Colors.red,
               onPressed: () {
