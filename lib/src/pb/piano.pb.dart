@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: piano.proto
 //
-// @dart = 2.3
+// @dart = 2.12
 // ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
 
 import 'dart:core' as $core;
@@ -16,7 +16,15 @@ class Note extends $pb.GeneratedMessage {
   ;
 
   Note._() : super();
-  factory Note() => create();
+  factory Note({
+    $core.int? pitch,
+  }) {
+    final _result = create();
+    if (pitch != null) {
+      _result.pitch = pitch;
+    }
+    return _result;
+  }
   factory Note.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Note.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -28,7 +36,7 @@ class Note extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Note copyWith(void Function(Note) updates) => super.copyWith((message) => updates(message as Note)); // ignore: deprecated_member_use
+  Note copyWith(void Function(Note) updates) => super.copyWith((message) => updates(message as Note)) as Note; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static Note create() => Note._();
@@ -36,7 +44,7 @@ class Note extends $pb.GeneratedMessage {
   static $pb.PbList<Note> createRepeated() => $pb.PbList<Note>();
   @$core.pragma('dart2js:noInline')
   static Note getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Note>(create);
-  static Note _defaultInstance;
+  static Note? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.int get pitch => $_getIZ(0);

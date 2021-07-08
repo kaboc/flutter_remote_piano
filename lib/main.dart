@@ -59,7 +59,11 @@ class App extends StatelessWidget {
       ],
       child: MaterialApp(
         onGenerateTitle: (context) => l(context).appTitle,
-        theme: ThemeData.dark(),
+        theme: ThemeData.from(
+          colorScheme: const ColorScheme.dark(
+            primary: Colors.lightGreen,
+          ),
+        ),
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,
         home: const Piano(),

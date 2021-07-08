@@ -24,7 +24,7 @@ class ConnectionButton extends StatelessWidget {
       initialData: ConnectionStates.off,
       builder: (context, snapshot) {
         return IconButton(
-          icon: _icons[snapshot.data.index],
+          icon: _icons[snapshot.data!.index],
           onPressed: () async {
             snapshot.data == ConnectionStates.ready
                 ? await bloc.disconnect()

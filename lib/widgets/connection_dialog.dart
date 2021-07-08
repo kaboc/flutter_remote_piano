@@ -8,12 +8,13 @@ import 'package:flutter_remote_piano/blocs/remote_bloc.dart';
 import 'package:flutter_remote_piano/widgets/error_dialog.dart';
 
 class HostController = TextEditingController with Type;
+
 class PortController = TextEditingController with Type;
 
 class ConnectionDialog extends StatelessWidget {
   final BuildContext _context;
 
-  const ConnectionDialog({@required BuildContext context}) : _context = context;
+  const ConnectionDialog({required BuildContext context}) : _context = context;
 
   @override
   Widget build(BuildContext context) {
@@ -24,11 +25,9 @@ class ConnectionDialog extends StatelessWidget {
       child: SingleChildScrollView(
         child: AlertDialog(
           content: Column(
-            children: <Widget>[
-              if (kIsWeb)
-                Text(l(context).webLimitation),
-              if (kIsWeb)
-                const SizedBox(height: 16.0),
+            children: [
+              if (kIsWeb) Text(l(context).webLimitation),
+              if (kIsWeb) const SizedBox(height: 16.0),
               TextField(
                 controller: hostController,
                 decoration: InputDecoration(
@@ -46,13 +45,19 @@ class ConnectionDialog extends StatelessWidget {
               ),
             ],
           ),
-          actions: <Widget>[
-            FlatButton(
+          actions: [
+            TextButton(
               child: Text(l(context).cancel),
+              // style: TextButton.styleFrom(
+              //   primary: Theme.of(context).colorScheme.onPrimary,
+              // ),
               onPressed: () => Navigator.pop(context),
             ),
-            FlatButton(
+            TextButton(
               child: Text(l(context).connect),
+              // style: TextButton.styleFrom(
+              //   primary: Theme.of(context).colorScheme.onPrimary,
+              // ),
               onPressed: () async => await _onPressed(
                 context: context,
                 hostController: hostController,
@@ -73,9 +78,9 @@ class ConnectionDialog extends StatelessWidget {
   }
 
   Future<void> _onPressed({
-    @required BuildContext context,
-    @required HostController hostController,
-    @required PortController portController,
+    required BuildContext context,
+    required HostController hostController,
+    required PortController portController,
   }) async {
     Navigator.pop(context);
 
@@ -89,9 +94,9 @@ class ConnectionDialog extends StatelessWidget {
 
     try {
       await context.read<RemoteBloc>().connect(
-        host: hostController.text,
-        port: port,
-      );
+            host: hostController.text,
+            port: port,
+          );
     } on PlatformUnsupportedException catch (_) {
       _showErrorDialog(l(_context).platformError);
     } on ConnectionFailureException catch (_) {
@@ -101,8 +106,8 @@ class ConnectionDialog extends StatelessWidget {
     }
   }
 
-  int _toNumber(String text) {
-    return text == null ? null : int.tryParse(text);
+  int? _toNumber(String text) {
+    return int.tryParse(text);
   }
 
   void _showErrorDialog(String message) {

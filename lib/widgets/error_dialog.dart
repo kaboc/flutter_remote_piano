@@ -5,11 +5,11 @@ import 'package:flutter_remote_piano/common/l10n.dart';
 class ErrorDialog extends StatelessWidget {
   final BuildContext _context;
   final String message;
-  final VoidCallback onConfirm;
+  final VoidCallback? onConfirm;
 
   const ErrorDialog({
-    @required BuildContext context,
-    @required this.message,
+    required BuildContext context,
+    required this.message,
     this.onConfirm,
   }) : _context = context;
 
@@ -25,13 +25,13 @@ class ErrorDialog extends StatelessWidget {
           content: SingleChildScrollView(
             child: Text(message),
           ),
-          actions: <Widget>[
-            RaisedButton(
+          actions: [
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(primary: Colors.red),
               child: Text(
                 l(context).ok,
                 style: const TextStyle(color: Colors.white),
               ),
-              color: Colors.red,
               onPressed: () {
                 Navigator.pop(context);
                 onConfirm?.call();

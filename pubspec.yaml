@@ -4,7 +4,7 @@ publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.3.0 <3.0.0"
+  sdk: ">=2.13.0 <3.0.0"
 
 dependencies:
   flutter:
@@ -13,10 +13,14 @@ dependencies:
   flutter_localizations:
     sdk: flutter
 
-  flutter_midi: ^1.0.2
-  grpc: ^2.8.0
-  intl: ^0.16.1
-  provider: ^4.3.2+3
+  flutter_midi: ^1.1.0
+  grpc: ^3.0.0
+  intl: ^0.17.0
+  provider: ^5.0.0
+
+dependency_overrides:
+  crypto: ^3.0.1
+  intl: ^0.17.0
 
 dev_dependencies:
   intl_translation: ^0.17.10+1

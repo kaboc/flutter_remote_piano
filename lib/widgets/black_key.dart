@@ -32,10 +32,9 @@ class BlackKey extends StatelessWidget {
             margin:
                 EdgeInsets.symmetric(horizontal: width * (1 - _widthRatio) / 2),
             decoration: BoxDecoration(
-              color: snapshot.data ? Colors.grey : Colors.black,
-              borderRadius: const BorderRadius.only(
-                bottomLeft: Radius.circular(8.0),
-                bottomRight: Radius.circular(8.0),
+              color: snapshot.data! ? Colors.grey : Colors.black,
+              borderRadius: const BorderRadius.vertical(
+                bottom: Radius.circular(8.0),
               ),
             ),
             alignment: Alignment.bottomCenter,
@@ -45,7 +44,7 @@ class BlackKey extends StatelessWidget {
                 SoundBase.toName(pitch),
                 style: const TextStyle(fontSize: 18.0),
               ),
-              opacity: snapshot.data ? 1.0 : 0.0,
+              opacity: snapshot.data! ? 1.0 : 0.0,
             ),
           );
         },

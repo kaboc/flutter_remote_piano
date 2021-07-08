@@ -8,7 +8,7 @@ export 'package:flutter_remote_piano/platforms/sound_base.dart';
 const _fontPath = 'assets/sf2/Piano.SF2';
 
 class Sound extends SoundBase {
-  FlutterMidi midi = FlutterMidi();
+  final FlutterMidi midi = FlutterMidi();
 
   @override
   void init() {

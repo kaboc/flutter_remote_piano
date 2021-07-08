@@ -23,13 +23,12 @@ class WhiteKey extends StatelessWidget {
           builder: (context, snapshot) {
             return Container(
               decoration: BoxDecoration(
-                color: snapshot.data ? Colors.grey : Colors.white,
+                color: snapshot.data! ? Colors.grey : Colors.white,
                 border: const Border.fromBorderSide(
                   BorderSide(style: BorderStyle.solid),
                 ),
-                borderRadius: const BorderRadius.only(
-                  bottomLeft: Radius.circular(8.0),
-                  bottomRight: Radius.circular(8.0),
+                borderRadius: const BorderRadius.vertical(
+                  bottom: Radius.circular(8.0),
                 ),
               ),
               alignment: Alignment.bottomCenter,

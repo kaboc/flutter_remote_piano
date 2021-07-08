@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'package:meta/meta.dart';
 
 import 'package:flutter_remote_piano/src/pb/piano.pbgrpc.dart';
 
@@ -7,13 +6,16 @@ typedef ResponseHandler = void Function(int);
 typedef ErrorHandler = Future<void> Function();
 
 abstract class GrpcBase<Channel> {
-  Channel channel;
-  PianoClient client;
+  Channel? channel;
+  PianoClient? client;
   final _requestController = StreamController<int>.broadcast();
 
-  void init({@required String host, @required int port});
+  void init({required String host, required int port});
 
-  Future<void> connect({ResponseHandler onResponse, ErrorHandler onError});
+  Future<void> connect({
+    required ResponseHandler onResponse,
+    required ErrorHandler onError,
+  });
 
   Future<void> terminate();
 

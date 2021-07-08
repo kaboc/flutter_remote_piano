@@ -1,6 +1,4 @@
 import 'dart:async';
-import 'package:meta/meta.dart';
-import 'package:flutter/material.dart';
 
 import 'package:flutter_remote_piano/common/connection_states.dart';
 import 'package:flutter_remote_piano/platforms/grpc_base.dart';
@@ -10,9 +8,9 @@ class RemoteBloc {
   final int basePitch;
 
   RemoteBloc({
-    @required this.grpc,
-    @required this.basePitch,
-    @required int numberOfKeys,
+    required this.grpc,
+    required this.basePitch,
+    required int numberOfKeys,
   }) {
     for (int i = 0; i < numberOfKeys; i++) {
       _tapControllers.add(StreamController<bool>());
@@ -39,7 +37,7 @@ class RemoteBloc {
     _tapControllers.clear();
   }
 
-  Future<void> connect({@required String host, @required int port}) async {
+  Future<void> connect({required String host, required int port}) async {
     _toggleButton(ConnectionStates.ready);
 
     grpc.init(host: host, port: port);
