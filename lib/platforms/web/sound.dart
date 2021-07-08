@@ -1,3 +1,4 @@
+// ignore: avoid_web_libraries_in_flutter
 import 'dart:js';
 
 import 'package:flutter_remote_piano/platforms/sound_base.dart';
