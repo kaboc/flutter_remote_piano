@@ -40,11 +40,11 @@ class BlackKey extends StatelessWidget {
             alignment: Alignment.bottomCenter,
             padding: const EdgeInsets.only(bottom: 32.0),
             child: Opacity(
+              opacity: snapshot.data! ? 1.0 : 0.0,
               child: Text(
                 SoundBase.toName(pitch),
                 style: const TextStyle(fontSize: 18.0),
               ),
-              opacity: snapshot.data! ? 1.0 : 0.0,
             ),
           );
         },
