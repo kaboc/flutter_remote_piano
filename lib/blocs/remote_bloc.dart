@@ -4,7 +4,7 @@ import 'package:flutter_remote_piano/common/connection_states.dart';
 import 'package:flutter_remote_piano/platforms/grpc_base.dart';
 
 class RemoteBloc {
-  final GrpcBase grpc;
+  final GrpcBase<Object?> grpc;
   final int basePitch;
 
   RemoteBloc({
