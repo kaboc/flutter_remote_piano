@@ -30,6 +30,7 @@ class ConnectionDialog extends StatelessWidget {
               if (kIsWeb) const SizedBox(height: 16.0),
               TextField(
                 controller: hostController,
+                keyboardType: TextInputType.number,
                 decoration: InputDecoration(
                   labelText: l(context).hostTitle,
                   hintText: '${l(context).eg} 192.168.111.222',
