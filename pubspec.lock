@@ -131,19 +131,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_midi:
+  flutter_midi_pro:
     dependency: "direct main"
     description:
-      name: flutter_midi
-      sha256: "000e513736a316439b3cf5cf67066a3093ea0dc36c89b69734383554d3b2f757"
+      name: flutter_midi_pro
+      sha256: "74c9602cbaa39d0530772b1333fa0d139ef09b7c01b0c0c19dfe2cfca3f77be6"
       url: "https://pub.dev"
     source: hosted
-    version: "1.1.0"
-  flutter_web_plugins:
-    dependency: transitive
-    description: flutter
-    source: sdk
-    version: "0.0.0"
+    version: "1.0.6"
   glob:
     dependency: transitive
     description:
@@ -296,14 +291,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.2.0"
-  path_provider_macos:
-    dependency: transitive
-    description:
-      name: path_provider_macos
-      sha256: cd57cb98a30ce9d12fdd1896d9d3b0517ce689f942de6ccd2708cd39b3d18a7c
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.0.7"
   path_provider_platform_interface:
     dependency: transitive
     description:
@@ -397,14 +384,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.1"
-  tonic:
-    dependency: transitive
-    description:
-      name: tonic
-      sha256: "2676ba51dade95b2d92274c75a3b0ac85d645d387193cb8137dc92ca6e1298b0"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.2.4"
   typed_data:
     dependency: transitive
     description:

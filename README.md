@@ -37,5 +37,5 @@ Either of the servers below is necessary if you use the remote operation feature
 ## Credits
 
 * Icons made by [Adib Sulthon](https://www.flaticon.com/authors/adib-sulthon "Adib Sulthon") from [www.flaticon.com](https://www.flaticon.com/ "Flaticon")
-* [flutter_midi](https://github.com/rodydavis/flutter_midi) by Rody Davis
+* [flutter_midi_pro](https://github.com/MelihHakanPektas/flutter_midi_pro) by Melih Hakan Pektas
 * [Tone.js](https://tonejs.github.io/) by Yotam Mann
