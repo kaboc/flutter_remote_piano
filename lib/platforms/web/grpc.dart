@@ -32,8 +32,15 @@ class Grpc extends GrpcBase<GrpcWebClientChannel> {
       debugPrint('$e');
       onDisconnected();
 
-      if (e is GrpcError && e.code != StatusCode.cancelled) {
-        onConnectionError();
+      if (e is GrpcError) {
+        final message = e.message ?? '';
+        switch (e.code) {
+          case StatusCode.cancelled:
+          case StatusCode.unknown when message.contains('errorCode: 0'):
+            break;
+          default:
+            onConnectionError();
+        }
       }
     });
   }
