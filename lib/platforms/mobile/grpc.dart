@@ -1,7 +1,7 @@
 import 'dart:async';
+import 'package:flutter/foundation.dart';
 import 'package:grpc/grpc.dart';
 
-import 'package:flutter_remote_piano/common/exceptions.dart';
 import 'package:flutter_remote_piano/platforms/grpc_base.dart';
 import 'package:flutter_remote_piano/src/pb/piano.pbgrpc.dart';
 
@@ -25,10 +25,12 @@ class Grpc extends GrpcBase<ClientChannel> {
   @override
   Future<void> connect({
     required ResponseHandler onResponse,
-    required ErrorHandler onError,
+    required DisconnectionHandler onDisconnected,
+    required ErrorHandler onPlatformError,
+    required ErrorHandler onConnectionError,
   }) async {
     if (client == null) {
-      await onError();
+      onConnectionError();
       return;
     }
 
@@ -37,28 +39,16 @@ class Grpc extends GrpcBase<ClientChannel> {
       options: CallOptions(compression: const GzipCodec()),
     );
 
-    try {
-      await for (final res in responses) {
-        onResponse(res.pitch);
-      }
-    } on GrpcError catch (e) {
-      // GrpcError or another exception was thrown at older versions
-      // of the grpc package when the server was terminated, but
-      // it appears that no exception is thrown with the latest version.
-      print(e);
-      await onError();
-      // It looks like the "UNAVAILABLE" error occurs when the connection
-      // is cut off by the user, which shouldn't be handled as an error,
-      // so here it is excluded from the error types to show an error dialog.
-      if (e.code != StatusCode.unavailable) {
-        throw ConnectionFailureException();
-      }
-    } catch (e) {
-      print(e);
-      await onError();
-    }
+    responses.listen((note) {
+      onResponse(note.pitch);
+    }).onError((Object? e) {
+      debugPrint('$e');
+      onDisconnected();
 
-    await onError();
+      if (e is GrpcError && e.code != StatusCode.cancelled) {
+        onConnectionError();
+      }
+    });
   }
 
   @override

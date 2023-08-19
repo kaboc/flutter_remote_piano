@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_remote_piano/common/l10n.dart';
 
 class ErrorDialog extends StatelessWidget {
-  final BuildContext _context;
-  final String message;
-  final VoidCallback? onConfirm;
-
   const ErrorDialog({
     required BuildContext context,
     required this.message,
     this.onConfirm,
   }) : _context = context;
+
+  final BuildContext _context;
+  final String message;
+  final VoidCallback? onConfirm;
 
   @override
   Widget build(BuildContext context) {

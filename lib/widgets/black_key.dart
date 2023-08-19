@@ -7,9 +7,9 @@ import 'package:flutter_remote_piano/platforms/sound_base.dart';
 const _widthRatio = 0.75;
 
 class BlackKey extends StatelessWidget {
-  final Notes note;
-
   const BlackKey(this.note);
+
+  final Notes note;
 
   @override
   Widget build(BuildContext context) {

@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:flutter_remote_piano/common/exceptions.dart';
 import 'package:flutter_remote_piano/platforms/grpc_base.dart';
 
 class Grpc extends GrpcBase<void> {
@@ -10,10 +9,12 @@ class Grpc extends GrpcBase<void> {
   @override
   Future<void> connect({
     required ResponseHandler onResponse,
-    required ErrorHandler onError,
+    required DisconnectionHandler onDisconnected,
+    required ErrorHandler onPlatformError,
+    required ErrorHandler onConnectionError,
   }) async {
-    await onError();
-    throw PlatformUnsupportedException();
+    onDisconnected();
+    onPlatformError();
   }
 
   @override

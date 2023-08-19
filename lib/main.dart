@@ -46,7 +46,7 @@ class App extends StatelessWidget {
               grpc: Grpc(),
               basePitch: SoundBase.basePitch,
               numberOfKeys: SoundBase.whiteNum + SoundBase.blackNum,
-            )..pitch.listen((pitch) => sound.play(pitch));
+            )..pitch.listen(sound.play);
           },
           dispose: (_, bloc) => bloc.dispose(),
         ),

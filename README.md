@@ -15,10 +15,11 @@ See the information on web limitations below.
 * Android
 * iOS
 * Web (limited)
-    * **The app may get disconnected right after the first note is sent on the web at some particular Flutter versions.**  
+    * **The app gets disconnected right after the first note is sent on the web.**  
     * `gRPC-Web` is used for web instead of `grpc-dart`.
     * Sending notes is not supported due to the limited functionality of gRPC-Web.
-    * Receiving notes does not start unless you send a request by tapping any one of keys after connected to a server.
+    * ~~Receiving notes does not start unless you send a request by tapping any one of keys after connected to a server.~~
+        * Receiving notes is no longer supported either.
     * Tapping more keys cause an error printed in a browser console.
     * A gateway proxy is necessary between a server and clients.
         * See the README of [piano_server](https://github.com/kaboc/piano_server) for details.

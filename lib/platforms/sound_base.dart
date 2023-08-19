@@ -50,7 +50,7 @@ abstract class SoundBase {
   }
 
   static String toName(int pitch) {
-    final int keyNum = pitch % 12;
+    final keyNum = pitch % 12;
     return _noteNames[keyNum];
   }
 }

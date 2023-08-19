@@ -1,7 +1,7 @@
 import 'dart:async';
+import 'package:flutter/foundation.dart';
 import 'package:grpc/grpc_web.dart';
 
-import 'package:flutter_remote_piano/common/exceptions.dart';
 import 'package:flutter_remote_piano/platforms/grpc_base.dart';
 import 'package:flutter_remote_piano/src/pb/piano.pbgrpc.dart';
 
@@ -15,33 +15,27 @@ class Grpc extends GrpcBase<GrpcWebClientChannel> {
   @override
   Future<void> connect({
     required ResponseHandler onResponse,
-    required ErrorHandler onError,
+    required DisconnectionHandler onDisconnected,
+    required ErrorHandler onPlatformError,
+    required ErrorHandler onConnectionError,
   }) async {
     if (client == null) {
-      await onError();
+      onConnectionError();
       return;
     }
 
     final responses = client!.connect(requestStream());
 
-    // It does not seem handling of exceptions on web is as reliable as on mobile.
-    // They are caught properly in some cases, but not in other cases.
-    try {
-      await for (final res in responses) {
-        onResponse(res.pitch);
-      }
-    } on GrpcError catch (e) {
-      print(e);
-      await onError();
-      if (e.code != StatusCode.unavailable) {
-        throw ConnectionFailureException();
-      }
-    } catch (e) {
-      print(e);
-      await onError();
-    }
+    responses.listen((note) {
+      onResponse(note.pitch);
+    }).onError((Object? e) {
+      debugPrint('$e');
+      onDisconnected();
 
-    await onError();
+      if (e is GrpcError && e.code != StatusCode.cancelled) {
+        onConnectionError();
+      }
+    });
   }
 
   @override

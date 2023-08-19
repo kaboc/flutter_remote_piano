@@ -5,9 +5,9 @@ import 'package:flutter_remote_piano/blocs/remote_bloc.dart';
 import 'package:flutter_remote_piano/platforms/sound_base.dart';
 
 class WhiteKey extends StatelessWidget {
-  final Notes note;
-
   const WhiteKey(this.note);
+
+  final Notes note;
 
   @override
   Widget build(BuildContext context) {
@@ -24,9 +24,7 @@ class WhiteKey extends StatelessWidget {
             return Container(
               decoration: BoxDecoration(
                 color: snapshot.data! ? Colors.grey : Colors.white,
-                border: const Border.fromBorderSide(
-                  BorderSide(style: BorderStyle.solid),
-                ),
+                border: const Border.fromBorderSide(BorderSide()),
                 borderRadius: const BorderRadius.vertical(
                   bottom: Radius.circular(8.0),
                 ),

@@ -10,6 +10,7 @@ class Sound extends SoundBase {
 
   @override
   void init() {
+    // ignore: avoid_dynamic_calls
     _synth = JsObject(context['Tone']['PolySynth'] as JsFunction)
         .callMethod('toMaster');
   }
@@ -19,6 +20,7 @@ class Sound extends SoundBase {
     final octaveNum = (pitch / 12).floor();
     final noteName = '${SoundBase.toName(pitch)}$octaveNum';
 
+    // ignore: avoid_dynamic_calls
     _synth.callMethod('triggerAttackRelease', [noteName, '8n']);
   }
 }

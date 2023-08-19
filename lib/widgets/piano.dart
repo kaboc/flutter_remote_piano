@@ -29,8 +29,8 @@ class Piano extends StatelessWidget {
               value: Size(maxWidth, maxHeight),
               child: Stack(
                 children: [
-                  Row(
-                    children: const [
+                  const Row(
+                    children: [
                       WhiteKey(Notes.c1),
                       WhiteKey(Notes.d1),
                       WhiteKey(Notes.e1),
@@ -46,8 +46,8 @@ class Piano extends StatelessWidget {
                   Positioned(
                     left: keyWidth / 2,
                     top: 0.0,
-                    child: Row(
-                      children: const [
+                    child: const Row(
+                      children: [
                         BlackKey(Notes.cm1),
                         BlackKey(Notes.dm1),
                         BlackKeySpace(),

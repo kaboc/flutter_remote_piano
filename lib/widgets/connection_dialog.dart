@@ -2,19 +2,22 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'package:flutter_remote_piano/common/exceptions.dart';
 import 'package:flutter_remote_piano/common/l10n.dart';
 import 'package:flutter_remote_piano/blocs/remote_bloc.dart';
 import 'package:flutter_remote_piano/widgets/error_dialog.dart';
 
-class HostController = TextEditingController with Type;
+class HostController extends TextEditingController {
+  HostController({super.text});
+}
 
-class PortController = TextEditingController with Type;
+class PortController extends TextEditingController {
+  PortController({super.text});
+}
 
 class ConnectionDialog extends StatelessWidget {
-  final BuildContext _context;
-
   const ConnectionDialog({required BuildContext context}) : _context = context;
+
+  final BuildContext _context;
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +62,7 @@ class ConnectionDialog extends StatelessWidget {
               // style: TextButton.styleFrom(
               //   primary: Theme.of(context).colorScheme.onPrimary,
               // ),
-              onPressed: () async => await _onPressed(
+              onPressed: () => _onPressed(
                 context: context,
                 hostController: hostController,
                 portController: portController,
@@ -86,29 +89,23 @@ class ConnectionDialog extends StatelessWidget {
     Navigator.pop(context);
 
     final host = hostController.text;
-    final port = _toNumber(portController.text);
+    final port = int.tryParse(portController.text);
 
     if (host.isEmpty || port == null || port.isNegative) {
       _showErrorDialog(l(_context).validationError);
       return;
     }
 
-    try {
-      await context.read<RemoteBloc>().connect(
-            host: hostController.text,
-            port: port,
-          );
-    } on PlatformUnsupportedException catch (_) {
-      _showErrorDialog(l(_context).platformError);
-    } on ConnectionFailureException catch (_) {
-      _showErrorDialog(l(_context).connectionError);
-    } catch (e) {
-      print(e);
-    }
-  }
-
-  int? _toNumber(String text) {
-    return int.tryParse(text);
+    await context.read<RemoteBloc>().connect(
+          host: hostController.text,
+          port: port,
+          onPlatformError: () {
+            _showErrorDialog(l(_context).platformError);
+          },
+          onConnectionError: () {
+            _showErrorDialog(l(_context).connectionError);
+          },
+        );
   }
 
   void _showErrorDialog(String message) {

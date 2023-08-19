@@ -4,18 +4,18 @@ import 'package:flutter_remote_piano/common/connection_states.dart';
 import 'package:flutter_remote_piano/platforms/grpc_base.dart';
 
 class RemoteBloc {
-  final GrpcBase<Object?> grpc;
-  final int basePitch;
-
   RemoteBloc({
     required this.grpc,
     required this.basePitch,
     required int numberOfKeys,
   }) {
-    for (int i = 0; i < numberOfKeys; i++) {
+    for (var i = 0; i < numberOfKeys; i++) {
       _tapControllers.add(StreamController<bool>());
     }
   }
+
+  final GrpcBase<Object?> grpc;
+  final int basePitch;
 
   final _stateController = StreamController<ConnectionStates>();
   final _soundController = StreamController<int>();
@@ -37,13 +37,20 @@ class RemoteBloc {
     _tapControllers.clear();
   }
 
-  Future<void> connect({required String host, required int port}) async {
+  Future<void> connect({
+    required String host,
+    required int port,
+    required ErrorHandler onPlatformError,
+    required ErrorHandler onConnectionError,
+  }) async {
     _toggleButton(ConnectionStates.ready);
 
     grpc.init(host: host, port: port);
     await grpc.connect(
-      onResponse: (pitch) => _executeTap(pitch),
-      onError: () async => await disconnect(),
+      onResponse: _executeTap,
+      onDisconnected: terminate,
+      onPlatformError: onPlatformError,
+      onConnectionError: onConnectionError,
     );
   }
 
@@ -52,7 +59,7 @@ class RemoteBloc {
     grpc.addRequest(pitch);
   }
 
-  Future<void> disconnect() async {
+  Future<void> terminate() async {
     await grpc.terminate();
     _toggleButton(ConnectionStates.off);
   }

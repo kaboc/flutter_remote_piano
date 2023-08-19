@@ -3,7 +3,8 @@ import 'dart:async';
 import 'package:flutter_remote_piano/src/pb/piano.pbgrpc.dart';
 
 typedef ResponseHandler = void Function(int);
-typedef ErrorHandler = Future<void> Function();
+typedef DisconnectionHandler = void Function();
+typedef ErrorHandler = void Function();
 
 abstract class GrpcBase<Channel> {
   Channel? channel;
@@ -14,7 +15,9 @@ abstract class GrpcBase<Channel> {
 
   Future<void> connect({
     required ResponseHandler onResponse,
-    required ErrorHandler onError,
+    required DisconnectionHandler onDisconnected,
+    required ErrorHandler onPlatformError,
+    required ErrorHandler onConnectionError,
   });
 
   Future<void> terminate();

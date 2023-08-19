@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_midi/flutter_midi.dart';
 
@@ -21,7 +22,7 @@ class Sound extends SoundBase {
     try {
       await midi.playMidiNote(midi: pitch);
     } on PlatformException catch (_) {
-      print(
+      debugPrint(
         'An error occurred in the MIDI plugin; '
         'this typically occurs when a note is played '
         'before the sound font becomes ready.',
